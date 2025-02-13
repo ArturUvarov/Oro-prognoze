@@ -10,7 +10,7 @@ function Navigation() {
                 to="/"
                 className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300 inline-block" /* Added inline-block */
               >
-                Homepage
+                Orai Lietuvoje
               </Link>
             </li>
             <li>

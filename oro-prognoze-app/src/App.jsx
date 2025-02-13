@@ -1,20 +1,20 @@
-import PasirinktiMiestai from "./pages/PasirinktiMiestai";
-import Miestai from "./pages/Miestai";
-import Header from "./pages/Header";
-import Footer from "./pages/Footer";
-import Homepage from "./pages/Homepage";
-import Navigation from "./components/navbar/NavbarElements";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Fetch from "./Fetch";
+import PasirinktiMiestai from "./pages/PasirinktiMiestai";
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import FetchMiestai from "./FetchMiestai";
 function App() {
   return (
     <Router>
-      <div className="app-container">
+      <div>
         <Header />
-        <Navigation />
+        <Navbar />
         <Routes>
+          <Route path="/" element={<Fetch />} />
           <Route path="/pasirinkti-miestai" element={<PasirinktiMiestai />} />
-          <Route path="/miestai" element={<Miestai />} />
-          <Route path="/" element={<Homepage />} />
+          <Route path="/miestai" element={<FetchMiestai />} />
         </Routes>
         <Footer />
       </div>
