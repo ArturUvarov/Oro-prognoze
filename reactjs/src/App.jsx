@@ -1,28 +1,23 @@
 import PasirinktiMiestai from "./pages/PasirinktiMiestai";
 import Miestai from "./pages/Miestai";
 import Header from "./pages/Header";
-import Main from "./pages/Main";
 import Footer from "./pages/Footer";
 import Homepage from "./pages/Homepage";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navigation from "./components/navbar/NavbarElements";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <Header />
-      <Main>
-        <Switch>
-          <Route path="/pasirinkti-miestai">
-            <PasirinktiMiestai />
-          </Route>
-          <Route path="/miestai">
-            <Miestai />
-          </Route>
-          <Route path="/">
-            <Homepage />
-          </Route>
-        </Switch>
-      </Main>
-      <Footer />
+      <div className="app-container">
+        <Header />
+        <Navigation />
+        <Routes>
+          <Route path="/pasirinkti-miestai" element={<PasirinktiMiestai />} />
+          <Route path="/miestai" element={<Miestai />} />
+          <Route path="/" element={<Homepage />} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 }
